@@ -1,4 +1,5 @@
-﻿using AVFoundation;
+﻿using App2.iOS;
+using AVFoundation;
 using Foundation;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using UIKit;
+using Xamarin.Forms;
 
+[assembly: Dependency(typeof(Audio))]
 namespace App2.iOS
 {
     public class Audio : IAudio

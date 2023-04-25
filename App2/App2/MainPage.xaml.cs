@@ -67,7 +67,7 @@ namespace App2
 
                     return;
                 }
-
+                //await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(2), 10);
                 await CrossGeolocator.Current.StartListeningAsync(TimeSpan.FromSeconds(1), 10, false, new Plugin.Geolocator.Abstractions.ListenerSettings
                 {
                     ActivityType = Plugin.Geolocator.Abstractions.ActivityType.AutomotiveNavigation,
@@ -112,7 +112,7 @@ namespace App2
         private void Current_PositionChanged(object sender, Plugin.Geolocator.Abstractions.PositionEventArgs e)
         {
             locationLabel.Text += $"{e.Position.Latitude}, {e.Position.Longitude}, {e.Position.Timestamp.TimeOfDay}{Environment.NewLine}";
-
+            audio.PlayAudio();
             Console.WriteLine($"{e.Position.Latitude}, {e.Position.Longitude}, {e.Position.Timestamp.TimeOfDay}");
         }
     }
